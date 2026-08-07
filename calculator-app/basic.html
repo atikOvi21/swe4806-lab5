@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Basic Calculator</title>
+</head>
+<body>
+  <h1>Basic Calculator</h1>
+  <p><a href="index.html">Home</a></p>
+
+  <label>Number A: <input type="number" id="a" value="0"></label><br>
+  <label>Number B: <input type="number" id="b" value="0"></label><br><br>
+
+  <button onclick="calculate('add')">Add</button>
+  <button onclick="calculate('subtract')">Subtract</button>
+  <button onclick="calculate('multiply')">Multiply</button>
+  <button onclick="calculate('divide')">Divide</button>
+
+  <p>Result: <span id="result"></span></p>
+
+  <script src="../Scripts/basic.js"></script>
+  <script>
+    function calculate(op) {
+      var a = parseFloat(document.getElementById('a').value);
+      var b = parseFloat(document.getElementById('b').value);
+      var result;
+      if (op === 'add') result = add(a, b);
+      else if (op === 'subtract') result = subtract(a, b);
+      else if (op === 'multiply') result = multiply(a, b);
+      else if (op === 'divide') result = divide(a, b);
+      document.getElementById('result').textContent = result;
+    }
+  </script>
+</body>
+</html>

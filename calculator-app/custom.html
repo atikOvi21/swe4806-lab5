@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Custom Calculator - Compound Interest</title>
+</head>
+<body>
+  <h1>Compound Interest Calculator</h1>
+  <p><a href="index.html">Home</a></p>
+
+  <label>Principal: <input type="number" id="principal" value="1000"></label><br>
+  <label>Annual Rate (%): <input type="number" id="rate" value="10"></label><br>
+  <label>Time (years): <input type="number" id="time" value="2"></label><br><br>
+
+  <button onclick="calculate()">Calculate</button>
+
+  <p>Result: <span id="result"></span></p>
+
+  <script src="../Scripts/basic.js"></script>
+  <script src="../Scripts/advanced.js"></script>
+  <script src="../Scripts/custom.js"></script>
+  <script>
+    function calculate() {
+      var principal = parseFloat(document.getElementById('principal').value);
+      var rate = parseFloat(document.getElementById('rate').value);
+      var time = parseFloat(document.getElementById('time').value);
+      var result = custom.compoundInterest(principal, rate, time);
+      document.getElementById('result').textContent =
+        'Amount: ' + result.amount.toFixed(2) + ', Interest: ' + result.interest.toFixed(2);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Advanced Calculator</title>
+</head>
+<body>
+  <h1>Advanced Calculator</h1>
+  <p><a href="index.html">Home</a></p>
+
+  <label>Number A: <input type="number" id="a" value="0"></label><br>
+  <label>Number B: <input type="number" id="b" value="0"></label><br><br>
+
+  <button onclick="calculate('pow')">Power (A^B)</button>
+  <button onclick="calculate('modulo')">Modulo (A % B)</button>
+  <button onclick="calculate('gcd')">GCD</button>
+
+  <p>Result: <span id="result"></span></p>
+
+  <script src="../Scripts/advanced.js"></script>
+  <script>
+    function calculate(op) {
+      var a = parseFloat(document.getElementById('a').value);
+      var b = parseFloat(document.getElementById('b').value);
+      var result;
+      if (op === 'pow') result = pow(a, b);
+      else if (op === 'modulo') result = modulo(a, b);
+      else if (op === 'gcd') result = gcd(a, b);
+      document.getElementById('result').textContent = result;
+    }
+  </script>
+</body>
+</html>

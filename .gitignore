@@ -1,0 +1,4 @@
+node_modules/
+code-coverage-report/
+jest_html_reporters.html
+jest-html-reporters-attach/
